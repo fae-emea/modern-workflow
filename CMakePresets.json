@@ -1,0 +1,114 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "cxarm-windows",
+            "description": "Build with CXARM (Windows)",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "environment": {
+                "CC":  "C:/iar/ewarm-9.60.3/arm/bin/iccarm",
+                "CXX": "C:/iar/ewarm-9.60.3/arm/bin/iccarm",
+                "ASM": "C:/iar/ewarm-9.60.3/arm/bin/iasmarm"
+            },
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build-cxarm-win"
+        },
+        {
+            "name": "cxarm-linux",
+            "description": "Build with CXARM (Linux)",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            },
+            "environment": {
+                "CC":  "/opt/iar/cxarm/arm/bin/iccarm",
+                "CXX": "/opt/iar/cxarm/arm/bin/iccarm",
+                "ASM": "/opt/iar/cxarm/arm/bin/iasmarm"
+            },
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build-cxarm-lnx"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug-win",
+            "displayName": "Build Debug",
+            "description": "Disable optimizations - include debug information.",
+            "configurePreset": "cxarm-windows",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-win",
+            "displayName": "Build Release",
+            "description": "Optimize for speed - exclude debug information.",
+            "configurePreset": "cxarm-windows",
+            "configuration": "Release"
+        },
+        {
+            "name": "relwithdebinfo-win",
+            "displayName": "Build RelWithDebInfo",
+            "description": "Optimize for speed - include debug information.",
+            "configurePreset": "cxarm-windows",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "minsizerel-win",
+            "displayName": "Build MinSizeRel",
+            "description": "Optimize for smallest binary size - exclude debug information.",
+            "configurePreset": "cxarm-windows",
+            "configuration": "MinSizeRel"
+        },
+        {
+            "name": "debug-lnx",
+            "displayName": "Build Debug",
+            "description": "Disable optimizations - include debug information.",
+            "configurePreset": "cxarm-linux",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-lnx",
+            "displayName": "Build Release",
+            "description": "Optimize for speed - exclude debug information.",
+            "configurePreset": "cxarm-linux",
+            "configuration": "Release"
+        },
+        {
+            "name": "relwithdebinfo-lnx",
+            "displayName": "Build RelWithDebInfo",
+            "description": "Optimize for speed - include debug information.",
+            "configurePreset": "cxarm-linux",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "minsizerel-lnx",
+            "displayName": "Build MinSizeRel",
+            "description": "Optimize for smallest binary size - exclude debug information.",
+            "configurePreset": "cxarm-linux",
+            "configuration": "MinSizeRel"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "test-win",
+            "displayName": "Test (Windows)",
+            "description": "Test the build",
+            "configurePreset": "cxarm-windows"
+        },
+        {
+            "name": "test-lnx",
+            "displayName": "Test (Linux)",
+            "description": "Test the build",
+            "configurePreset": "cxarm-linux"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  "build": { "dockerfile": "Dockerfile" },
+  "containerEnv": {
+     "IAR_LMS_BEARER_TOKEN": "${localEnv:IAR_LMS_BEARER_TOKEN}",
+     "IAR_LMS_CLOUD_URL": "https://license.prd.sdc.cloud.iar.com"
+  },
+  "customizations": {
+  "vscode": {
+    "extensions": [
+      "ms-vscode.cpptools-extension-pack",
+      "ms-vscode-remote.vscode-remote-extensionpack",
+      "ms-vscode.vscode-serial-monitor",
+      "github.vscode-github-actions",
+      "iarsystems.iar-debug"
+      ]
+    }
+  },
+  "runArgs": [
+    "--device=/dev/bus/usb"
+  ]
+}

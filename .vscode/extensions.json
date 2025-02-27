@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "iarsystems.iar-debug",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode-remote.vscode-remote-extensionpack"
+    ],
+    "unwantedRecommendations": [
+        "iarsystems.iar-build"
+    ]
+}
