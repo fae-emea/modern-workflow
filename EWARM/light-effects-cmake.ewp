@@ -226,7 +226,7 @@
             <name>CMake</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <selectedTarget>D:\gitlab\fae\light-effects\EWARM\.cmake_build\Debug\light-effects.elf</selectedTarget>
+                <selectedTarget>C:\modern-workflow\build-cxarm-win\Debug\light-effects.elf</selectedTarget>
             </data>
         </settings>
         <settings>
@@ -465,7 +465,7 @@
             <name>CMake</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <selectedTarget>D:\gitlab\fae\light-effects\EWARM\.cmake_build\Release\light-effects.elf</selectedTarget>
+                <selectedTarget>C:\modern-workflow\build-cxarm-win\Release\light-effects.elf</selectedTarget>
             </data>
         </settings>
         <settings>
@@ -704,7 +704,7 @@
             <name>CMake</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <selectedTarget>D:\gitlab\fae\light-effects\EWARM\.cmake_build\RelWithDebInfo\light-effects.elf</selectedTarget>
+                <selectedTarget>C:\modern-workflow\build-cxarm-win\RelWithDebInfo\light-effects.elf</selectedTarget>
             </data>
         </settings>
         <settings>
@@ -943,7 +943,7 @@
             <name>CMake</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <selectedTarget>D:\gitlab\fae\light-effects\EWARM\.cmake_build\MinSizeRel\light-effects.elf</selectedTarget>
+                <selectedTarget>C:\modern-workflow\build-cxarm-win\MinSizeRel\light-effects.elf</selectedTarget>
             </data>
         </settings>
         <settings>
@@ -1228,9 +1228,9 @@
             <cmakeExtraOptions></cmakeExtraOptions>
             <cmakeExtraPathDir></cmakeExtraPathDir>
             <cmakeGenerator>Ninja Multi-Config</cmakeGenerator>
-            <cmakeOverrideToolEnvs>true</cmakeOverrideToolEnvs>
+            <cmakeOverrideToolEnvs>false</cmakeOverrideToolEnvs>
             <cmakePath>C:\Program Files\CMake\bin\cmake.exe</cmakePath>
-            <cmakePresetName>debug</cmakePresetName>
+            <cmakePresetName>cxarm-windows</cmakePresetName>
             <cmsisAddToolkitDir>true</cmsisAddToolkitDir>
             <cmsisCBuildGenExtraOptions>--update-rte</cmsisCBuildGenExtraOptions>
             <cmsisCSolutionExtraOptions></cmsisCSolutionExtraOptions>
