@@ -1,0 +1,69 @@
+name: CXARM CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+    - 'README.md'
+    - '.devcontainer/devcontainer.json'
+
+env:
+  IAR_LMS_BEARER_TOKEN: ${{ secrets.IAR_LMS_BEARER_TOKEN }}
+  IAR_LMS_CLOUD_URL: https://license.prd.sdc.cloud.iar.com
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/fae-emea/cxarm  
+    steps:
+    - name: Invoke the IAR C/C++ Compiler for Arm
+      run: iccarm --version
+    - name: Checkout project
+      uses: actions/checkout@v4
+    - name: CMake - Configure
+      run: cmake --preset ninja-multi
+    - name: CMake - Build
+      run: cmake --build build-cxarm-lnx --config Debug --verbose
+
+  verify:
+    name: Verify
+    needs: build
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/fae-emea/cxarm
+    timeout-minutes: 5
+    steps:      
+    - name: Checkout project
+      uses: actions/checkout@v4
+    - name: CMake - Configure        
+      run: cmake --preset ninja-multi   
+    - name: IAR C-STAT, Static Analysis
+      working-directory: EWARM
+      run: |
+        iarbuild light-effects-cmake.ewp -cstat_analyze Debug -log all -parallel 4
+
+  deploy:
+    name: Deploy
+    needs: verify
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/fae-emea/cxarm    
+    steps:      
+    - name: Checkout project
+      uses: actions/checkout@v4
+    - name: CMake - Configure
+      run: cmake --preset ninja-multi
+    - name: CMake - Build
+      run: cmake --build build-cxarm-lnx --config Debug --verbose
+    - name: Convert ELF to Intel Extended
+      run: ielftool --ihex build-cxarm-lnx/Release/light-effects.elf build-cxarm-lnx/Release/light-effects.hex
+    - name: Upload release artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: project-release
+        path: |
+          build-cxarm-lnx/Release/light-effects.elf
+          build-cxarm-lnx/Release/light-effects.hex
+        if-no-files-found: error
