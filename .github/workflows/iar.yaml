@@ -23,7 +23,7 @@ jobs:
     - name: Checkout project
       uses: actions/checkout@v4
     - name: CMake - Configure
-      run: cmake --preset ninja-multi
+      run: cmake --preset cxarm-linux
     - name: CMake - Build
       run: cmake --build build-cxarm-lnx --config Debug --verbose
 
@@ -38,7 +38,7 @@ jobs:
     - name: Checkout project
       uses: actions/checkout@v4
     - name: CMake - Configure        
-      run: cmake --preset ninja-multi   
+      run: cmake --preset cxarm-linux   
     - name: IAR C-STAT, Static Analysis
       working-directory: EWARM
       run: |
@@ -54,7 +54,7 @@ jobs:
     - name: Checkout project
       uses: actions/checkout@v4
     - name: CMake - Configure
-      run: cmake --preset ninja-multi
+      run: cmake --preset cxarm-linux
     - name: CMake - Build
       run: cmake --build build-cxarm-lnx --config Debug --verbose
     - name: Convert ELF to Intel Extended
