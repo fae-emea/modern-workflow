@@ -42,6 +42,11 @@ jobs:
     - name: IAR C-STAT, Static Analysis
       working-directory: EWARM
       run: |
+        apt-get update
+        apt-get -y install xmlstarlet
+        xmlstarlet ed -u '//cmakePath' -v '/usr/bin/cmake' light-effects-cmake.ewp
+        xmlstarlet ed -u '//cmakePresetName' -v 'cxarm-linux' light-effects-cmake.ewp
+        xmlstarlet ed -u '//cmakeOverrideToolEnvs' -v 'false' light-effects-cmake.ewp
         iarbuild light-effects-cmake.ewp -cstat_analyze Debug -log all -parallel 4
 
   deploy:
