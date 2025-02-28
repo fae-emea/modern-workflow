@@ -61,7 +61,7 @@ jobs:
     - name: CMake - Configure
       run: cmake --preset cxarm-linux
     - name: CMake - Build
-      run: cmake --build build-cxarm-lnx --config Debug --verbose
+      run: cmake --build build-cxarm-lnx --config Release --verbose
     - name: Convert ELF to Intel Extended
       run: ielftool --ihex build-cxarm-lnx/Release/light-effects.elf build-cxarm-lnx/Release/light-effects.hex
     - name: Upload release artifacts
