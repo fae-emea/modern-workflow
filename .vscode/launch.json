@@ -106,7 +106,7 @@
             //"download": {
             //    "flashLoader": "C:/iar/ewarm-9.60.3/arm/config/flashloader/ST/FlashSTM32F427xI.board",
             //    "deviceMacros": [
-            //        "C:/iar/ewarm-9.60.3/arm/CONFIG/debugger/ST/STM32F4xx.dmac"
+            //        "C:/iar/ewarm-9.60.3/arm/config/debugger/ST/STM32F4xx.dmac"
             //    ]
             //}
         },
@@ -212,9 +212,9 @@
                 "--drv_swo_clock_setup=168000000,0,2000000"
             ],
             //"download": {
-            //    "flashLoader": "C:/iar/ewarm-9.60.3/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+            //    "flashLoader": "/opt/iar/cxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
             //    "deviceMacros": [
-            //        "C:/iar/ewarm-9.60.3/arm/CONFIG/debugger/ST/STM32F4xx.dmac"
+            //        "/opt/iar/cxarm/arm/config/debugger/ST/STM32F4xx.dmac"
             //    ]
             //}
         }
