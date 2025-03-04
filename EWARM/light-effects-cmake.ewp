@@ -960,6 +960,12 @@
     <group>
         <name>CMakeFiles</name>
         <group>
+            <name>cmake</name>
+            <file>
+                <name>$PROJ_DIR$\..\cmake\ielftool.cmake</name>
+            </file>
+        </group>
+        <group>
             <name>CppUTest</name>
             <group>
                 <name>src</name>
