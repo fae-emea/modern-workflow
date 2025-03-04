@@ -7,6 +7,9 @@ set(CMAKE_SYSTEM_NAME Generic)
 # Enable all CMake configuration types
 set(CMAKE_CONFIGURATION_TYPES Debug Release RelWithDebInfo MinSizeRel)
 
+# Include `./cmake` to the CMake's module path
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 # Declare a CMake project
 project(light-effects LANGUAGES CXX C ASM)
 
@@ -39,3 +42,6 @@ target_link_options(${PROJECT_NAME} PRIVATE
 
 # Link project against CppUTest
 target_link_libraries(${PROJECT_NAME} CppUTest)
+
+# Convert ELF to usual binary outputs
+include(ielftool)
