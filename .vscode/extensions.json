@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "iarsystems.iar-debug",
+        "ms-vscode.hexeditor",
         "ms-vscode.cpptools-extension-pack",
         "ms-vscode-remote.vscode-remote-extensionpack"
     ],
@@ -8,3 +9,4 @@
         "iarsystems.iar-build"
     ]
 }
+
