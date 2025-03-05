@@ -4,9 +4,9 @@ This repository contains a project example for the IAR STM32F429II-ACA board whi
 
 ## Windows
 ### Option 1
-- Set `IAR_TOOLCHAIN_PATH` as a Windows' user environment variable:
-1. Press the "Start Menu", search for "Edit environment variables for your account".
-2. Enter with a new "User environment variable" as described below:
+- Set `IAR_TOOLCHAIN_PATH` as a Windows' system environment variable:
+1. Press the "Start Menu", search for "Edit the system environment variables".
+2. Enter with a new "System environment variable" as described below:
 
 | Variable name | Value (Example) 
 | - | -
