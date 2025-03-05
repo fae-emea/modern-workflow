@@ -7,7 +7,7 @@
     },
     "configurePresets": [
         {
-            "name": "cxarm-windows",
+            "name": "ewarm-windows",
             "description": "Build with CXARM (Windows)",
             "condition": {
                 "type": "equals",
@@ -20,7 +20,7 @@
                 "ASM": "C:/iar/ewarm-9.60.3/arm/bin/iasmarm"
             },
             "generator": "Ninja Multi-Config",
-            "binaryDir": "${sourceDir}/build-cxarm-win"
+            "binaryDir": "${sourceDir}/build-ewarm-win"
         },
         {
             "name": "cxarm-linux",
@@ -44,28 +44,28 @@
             "name": "debug-win",
             "displayName": "Build Debug",
             "description": "Disable optimizations - include debug information.",
-            "configurePreset": "cxarm-windows",
+            "configurePreset": "ewarm-windows",
             "configuration": "Debug"
         },
         {
             "name": "release-win",
             "displayName": "Build Release",
             "description": "Optimize for speed - exclude debug information.",
-            "configurePreset": "cxarm-windows",
+            "configurePreset": "ewarm-windows",
             "configuration": "Release"
         },
         {
             "name": "relwithdebinfo-win",
             "displayName": "Build RelWithDebInfo",
             "description": "Optimize for speed - include debug information.",
-            "configurePreset": "cxarm-windows",
+            "configurePreset": "ewarm-windows",
             "configuration": "RelWithDebInfo"
         },
         {
             "name": "minsizerel-win",
             "displayName": "Build MinSizeRel",
             "description": "Optimize for smallest binary size - exclude debug information.",
-            "configurePreset": "cxarm-windows",
+            "configurePreset": "ewarm-windows",
             "configuration": "MinSizeRel"
         },
         {
@@ -102,7 +102,7 @@
             "name": "test-win",
             "displayName": "Test (Windows)",
             "description": "Test the build",
-            "configurePreset": "cxarm-windows"
+            "configurePreset": "ewarm-windows"
         },
         {
             "name": "test-lnx",

@@ -10,6 +10,7 @@ EWARM/Backup\ of\ light-effects.ew?
 EWARM/*.xml
 build/
 build-cxarm-*/
+build-ewarm-*/
 settings/
 cpputest*.xml
 .vscode/*.db
