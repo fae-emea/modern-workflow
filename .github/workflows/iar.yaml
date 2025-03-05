@@ -25,7 +25,7 @@ jobs:
     - name: CMake - Configure
       run: cmake --preset cxarm-linux
     - name: CMake - Build
-      run: cmake --build build-cxarm-lnx --config Debug --verbose
+      run: cmake --build build --config Debug --verbose
 
   verify:
     name: Verify
@@ -61,14 +61,14 @@ jobs:
     - name: CMake - Configure
       run: cmake --preset cxarm-linux
     - name: CMake - Build
-      run: cmake --build build-cxarm-lnx --config Release --verbose
+      run: cmake --build build --config Release --verbose
     - name: Convert ELF to Intel Extended
-      run: ielftool --ihex build-cxarm-lnx/Release/light-effects.elf build-cxarm-lnx/Release/light-effects.hex
+      run: ielftool --ihex build/Release/light-effects.elf build/Release/light-effects.hex
     - name: Upload release artifacts
       uses: actions/upload-artifact@v4
       with:
         name: project-release
         path: |
-          build-cxarm-lnx/Release/light-effects.elf
-          build-cxarm-lnx/Release/light-effects.hex
+          build/Release/light-effects.elf
+          build/Release/light-effects.hex
         if-no-files-found: error
