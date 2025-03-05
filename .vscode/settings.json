@@ -4,7 +4,11 @@
     // the executable on the host
     "cmake.buildBeforeRun": true,
     "cmake.configureOnOpen": true,
-    "cmake.useCMakePresets": "auto",
+    "cmake.useCMakePresets": "always",
+    "cmake.enabledOutputParsers": [
+        "cmake",
+        "iar"
+    ],
     "cmake.defaultVariants": { "buildType": "Debug" },
     "cmake.options.statusBarVisibility": "visible",
     "cmake.options.advanced": {
@@ -13,18 +17,18 @@
         },
         "configure": {
             "projectStatusVisibility": "visible",
-            "statusBarVisibility": "visible",
+            "statusBarVisibility": "visible"
         },
         "build": {
             "projectStatusVisibility": "visible",
-            "statusBarVisibility": "visible",
+            "statusBarVisibility": "visible"
         },
         "buildTarget": {
             "statusBarVisibility": "visible"
         },
         "ctest": {
             "projectStatusVisibility": "visible",
-            "statusBarVisibility": "visible",
+            "statusBarVisibility": "visible"
         },
         "debug": {
             "projectStatusVisibility": "hidden",
@@ -32,11 +36,11 @@
         },
         "launch": {
             "projectStatusVisibility": "hidden",
-            "statusBarVisibility": "hidden",
+            "statusBarVisibility": "hidden"
         },
         "cpack": {
             "projectStatusVisibility": "hidden",
-            "statusBarVisibility": "hidden",
+            "statusBarVisibility": "hidden"
         },
         "workflow": {
             "projectStatusVisibility": "hidden",

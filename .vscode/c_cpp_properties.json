@@ -2,22 +2,10 @@
     "version": 4,
     "configurations": [
         {
-            "name": "cxarm",
+            "name": "CMake",
             "configurationProvider": "ms-vscode.cmake-tools",
-            "includePath": [
-                // "/opt/iar/cxarm/arm/inc/c",
-                // "/opt/iar/cxarm/arm/inc/cpp",
-                // "/opt/iar/cxarm/arm/inc/libcpp",
-                "/opt/iar/cxarm/arm/inc/**",
-                // "C:/iar/ewarm-9.60.3/arm/inc/c",
-                // "C:/iar/ewarm-9.60.3/arm/inc/cpp",
-                // "C:/iar/ewarm-9.60.3/arm/inc/libcpp",
-                "C:/iar/ewarm-9.60.3/arm/inc/**"
-            ],
-            "forcedInclude": [
-                "${workspaceFolder}/.vscode/c_cpp_keywords.h",
-                "${workspaceFolder}/.vscode/c_cpp_predef.h"
-            ],
+            "compileCommands": "${config:cmake.buildDirectory}/compile_commands.json",
+            "mergeConfigurations": true,
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-arm",
@@ -25,7 +13,7 @@
                 "path": [
                     "${workspaceFolder}"
                 ],
-                "limitSymbolsToIncludedHeaders": false,
+                "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": "${workspaceFolder}/.vscode/c_cpp_browse.db"
             }
         }
