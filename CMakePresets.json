@@ -32,8 +32,11 @@
                 "CXX": "$env{IAR_TOOLCHAIN_PATH}/arm/bin/iccarm.exe",
                 "ASM": "$env{IAR_TOOLCHAIN_PATH}/arm/bin/iasmarm.exe"
             },
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS":true
+            },
             "generator": "Ninja Multi-Config",
-            "binaryDir": "${sourceDir}/build-ewarm-win"
+            "binaryDir": "${sourceDir}/build"
         },
         {
             "name": "cxarm-linux",
@@ -48,8 +51,11 @@
                 "CXX": "/opt/iar/cxarm/arm/bin/iccarm",
                 "ASM": "/opt/iar/cxarm/arm/bin/iasmarm"
             },
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS":true
+            },
             "generator": "Ninja Multi-Config",
-            "binaryDir": "${sourceDir}/build-cxarm-lnx"
+            "binaryDir": "${sourceDir}/build"
         }
     ],
     "buildPresets": [
