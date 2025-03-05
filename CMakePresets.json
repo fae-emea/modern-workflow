@@ -2,22 +2,35 @@
     "version": 6,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 22,
+        "minor": 20,
         "patch": 0
     },
     "configurePresets": [
         {
+            "name": "ewarm-default",
+            "hidden": true,
+            "condition": {
+                "type": "equals",
+                "lhs": "IAR_TOOLCHAIN_PATH",
+                "rhs": ""
+            },
+            "environment": {
+                "IAR_TOOLCHAIN_PATH": "C:/iar/ewarm"
+            }
+        },
+        {
             "name": "ewarm-windows",
-            "description": "Build with CXARM (Windows)",
+            "inherits": "ewarm-default",
+            "description": "Build with EWARM (Windows)",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
             },
             "environment": {
-                "CC":  "C:/iar/ewarm-9.60.3/arm/bin/iccarm",
-                "CXX": "C:/iar/ewarm-9.60.3/arm/bin/iccarm",
-                "ASM": "C:/iar/ewarm-9.60.3/arm/bin/iasmarm"
+                "CC":  "$env{IAR_TOOLCHAIN_PATH}/arm/bin/iccarm.exe",
+                "CXX": "$env{IAR_TOOLCHAIN_PATH}/arm/bin/iccarm.exe",
+                "ASM": "$env{IAR_TOOLCHAIN_PATH}/arm/bin/iasmarm.exe"
             },
             "generator": "Ninja Multi-Config",
             "binaryDir": "${sourceDir}/build-ewarm-win"

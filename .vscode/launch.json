@@ -2,22 +2,23 @@
     // .vscode/launch.json example for IAR Build Tools (Windows and Linux)
     "version": "0.2.0",
     "configurations": [
+
         {
-            "type": "cspy",
-            "request": "launch",
             "name": "IAR Debug (Windows/I-Jet/SWD)",
+            "type": "cspy",
+            "request": "launch",
             "target": "arm",
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
             "driver": "I-jet",
-            "workbenchPath": "C:/iar/ewarm-9.60.3",
+            "workbenchPath": "${input:pick-ew-path}",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "C:/iar/ewarm-9.60.3/arm/config/debugger/ST/STM32F429II.ddf",
+                "${input:pick-ew-path}/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--jet_standard_reset=9,0,0",
@@ -33,28 +34,28 @@
                 "--drv_catch_exceptions=0xff0"
             ],
             "download": {
-                "flashLoader": "C:/iar/ewarm-9.60.3/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+                "flashLoader": "${input:pick-ew-path}/arm/config/flashloader/ST/FlashSTM32F427xI.board",
                 "deviceMacros": [
-                    "C:/iar/ewarm-9.60.3/arm/config/debugger/ST/STM32F4xx.dmac"
+                    "${input:pick-ew-path}/arm/config/debugger/ST/STM32F4xx.dmac"
                 ]
             }
         },
         {
-            "type": "cspy",
-            "request": "launch",
             "name": "IAR Debug (Windows/I-Jet/ETM)",
+            "type": "cspy",
+            "request": "launch",
             "target": "arm",
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
             "driver": "I-jet",
-            "workbenchPath": "C:/iar/ewarm-9.60.3",
+            "workbenchPath": "${input:pick-ew-path}",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "C:/iar/ewarm-9.60.3/arm/config/debugger/ST/STM32F429II.ddf",
+                "${input:pick-ew-path}/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--jet_standard_reset=9,0,0",
@@ -71,28 +72,28 @@
                 "--drv_trace_settings=ETM"
             ],
             "download": {
-                "flashLoader": "C:/iar/ewarm-9.60.3/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+                "flashLoader": "${input:pick-ew-path}/arm/config/flashloader/ST/FlashSTM32F427xI.board",
                 "deviceMacros": [
-                    "C:/iar/ewarm-9.60.3/arm/config/debugger/ST/STM32F4xx.dmac"
+                    "${input:pick-ew-path}/arm/config/debugger/ST/STM32F4xx.dmac"
                 ]
             }
         },
         {
+            "name": "IAR Debug (Windows/J-Link)",
             "type": "cspy",
             "request": "launch",
-            "name": "IAR Debug (Windows/J-Link/SWD)",
             "target": "arm",
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
             "driver": "J-Link/J-Trace",
-            "workbenchPath": "C:/iar/ewarm-9.60.3",
+            "workbenchPath": "${input:pick-ew-path}",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "C:/iar/ewarm-9.60.3/arm/config/debugger/ST/STM32F429II.ddf",
+                "${input:pick-ew-path}/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--drv_communication=USB0",
@@ -104,28 +105,28 @@
                 "--drv_swo_clock_setup=168000000,0,2000000"
             ],
             //"download": {
-            //    "flashLoader": "C:/iar/ewarm-9.60.3/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+            //    "flashLoader": "${input:pick-ew-path}/arm/config/flashloader/ST/FlashSTM32F427xI.board",
             //    "deviceMacros": [
-            //        "C:/iar/ewarm-9.60.3/arm/config/debugger/ST/STM32F4xx.dmac"
+            //        "${input:pick-ew-path}/arm/config/debugger/ST/STM32F4xx.dmac"
             //    ]
             //}
         },
         {
+            "name": "IAR Debug (Linux/I-Jet/SWD)",
             "type": "cspy",
             "request": "launch",
-            "name": "IAR Debug (Linux/I-Jet/SWD)",
             "target": "arm",
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
             "driver": "I-jet",
-            "workbenchPath": "/opt/iar/cxarm",
+            "workbenchPath": "${input:pick-bcx-path}",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "/opt/iar/cxarm/arm/config/debugger/ST/STM32F429II.ddf",
+                "${input:pick-bcx-path}/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--jet_standard_reset=9,0,0",
@@ -141,28 +142,28 @@
                 "--drv_catch_exceptions=0xff0"
             ],
             "download": {
-                "flashLoader": "/opt/iar/cxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+                "flashLoader": "${input:pick-bcx-path}/arm/config/flashloader/ST/FlashSTM32F427xI.board",
                 "deviceMacros": [
-                    "/opt/iar/cxarm/arm/config/debugger/ST/STM32F4xx.dmac"
+                    "${input:pick-bcx-path}/arm/config/debugger/ST/STM32F4xx.dmac"
                 ]
             }
         },
         {
+            "name": "IAR Debug (Linux/I-Jet/ETM)",
             "type": "cspy",
             "request": "launch",
-            "name": "IAR Debug (Linux/I-Jet/ETM)",
             "target": "arm",
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
             "driver": "I-jet",
-            "workbenchPath": "/opt/iar/cxarm",
+            "workbenchPath": "${input:pick-bcx-path}",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "/opt/iar/cxarm/arm/config/debugger/ST/STM32F429II.ddf",
+                "${input:pick-bcx-path}/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--jet_standard_reset=9,0,0",
@@ -179,28 +180,28 @@
                 "--drv_trace_settings=ETM"
             ],
             "download": {
-                "flashLoader": "/opt/iar/cxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+                "flashLoader": "${input:pick-bcx-path}/arm/config/flashloader/ST/FlashSTM32F427xI.board",
                 "deviceMacros": [
-                    "/opt/iar/cxarm/arm/config/debugger/ST/STM32F4xx.dmac"
+                    "${input:pick-bcx-path}/arm/config/debugger/ST/STM32F4xx.dmac"
                 ]
             }
         },
         {
+            "name": "IAR Debug (Linux/J-Link)",
             "type": "cspy",
             "request": "launch",
-            "name": "IAR Debug (Linux/J-Link/SWD)",
             "target": "arm",
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
             "driver": "J-Link/J-Trace",
-            "workbenchPath": "/opt/iar/cxarm",
+            "workbenchPath": "${input:pick-bcx-path}",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "/opt/iar/cxarm/arm/config/debugger/ST/STM32F429II.ddf",
+                "${input:pick-bcx-path}/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--drv_communication=USB0",
@@ -212,11 +213,38 @@
                 "--drv_swo_clock_setup=168000000,0,2000000"
             ],
             //"download": {
-            //    "flashLoader": "/opt/iar/cxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+            //    "flashLoader": "${input:pick-bcx-path}/arm/config/flashloader/ST/FlashSTM32F427xI.board",
             //    "deviceMacros": [
-            //        "/opt/iar/cxarm/arm/config/debugger/ST/STM32F4xx.dmac"
+            //        "${input:pick-bcx-path}/arm/config/debugger/ST/STM32F4xx.dmac"
             //    ]
             //}
+        }
+    ],
+    "inputs": [
+        {
+            "id": "pick-ew-path",
+            "description": "Pick (or type) a valid path to the Embedded Workbench for Arm",
+            "default": "C:/iar/ewarm",
+            "type":"pickString",
+            "options": [
+                "C:/iar/ewarm",
+                "C:/iar/ewarm-9.60.4",
+                "C:/iar/ewarm-9.60.3"
+            ]
+        },
+        {
+            "id": "pick-bcx-path",
+            "description": "Pick (or type) a valid path to the IAR Build Tools for Arm",
+            "default": "/opt/iar/cxarm",
+            "type":"pickString",
+            "options": [
+                "/opt/iar/cxarm",
+                "/opt/iar/cxarm-9.60.4",
+                "/opt/iar/cxarm-9.60.3",
+                "/opt/iar/bxarm",
+                "/opt/iar/cxarm-9.60.4",
+                "/opt/iar/cxarm-9.60.3",
+            ]
         }
     ]
 }

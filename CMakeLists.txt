@@ -1,4 +1,4 @@
-# This IDE supports CMake 3.20 or later
+# This CMake project uses CMake v3.20 or later
 cmake_minimum_required(VERSION 3.20)
 
 # Set CMake for cross-compiling
