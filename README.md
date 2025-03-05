@@ -4,13 +4,17 @@ This repository contains a project example for the IAR STM32F429II-ACA board whi
 
 ## Windows
 ### Option 1
-- Set the `IAR_TOOLCHAIN_PATH` environment variable. Example:
-```
-IAR_TOOLCHAIN_PATH: C:\iar\ewarm-9.60.3
-```
+- Set `IAR_TOOLCHAIN_PATH` as a Windows' user environment variable:
+1. Press the "Start Menu", search for "Edit environment variables for your account".
+2. Enter with a new "User environment variable" as described below:
+
+| Variable name | Value (Example) 
+| - | -
+| `IAR_TOOLCHAIN_PATH` | `C:\iar\ewarm-9.60.3`
+
 ### Option 2
-- Create a symlink named `ewarm`. Example using administrative cmd.exe shell:
-```
+- Create a symbolic link named `ewarm` in `C:\iar` using an administrative shell (e.g., `cmd.exe`). In the example below, a symbolic link for `C:\iar\ewarm-9.60.3` was created:
+```cmd
 C:
 cd C:\IAR
 C:\IAR>mklink /d ewarm ewarm-9.60.3
