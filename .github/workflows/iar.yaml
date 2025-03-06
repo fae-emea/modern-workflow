@@ -6,6 +6,7 @@ on:
     paths-ignore:
     - 'README.md'
     - '.devcontainer/**'
+    - '.vscode/**'
 
 env:
   IAR_LMS_BEARER_TOKEN: ${{ secrets.IAR_LMS_BEARER_TOKEN }}
@@ -72,3 +73,4 @@ jobs:
           build/Release/light-effects.elf
           build/Release/light-effects.hex
         if-no-files-found: error
+
