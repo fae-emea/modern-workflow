@@ -1,6 +1,6 @@
 # modern-workflow
 
-This repository contains a project example for the IAR STM32F429II-ACA board which can be open on the IAR Embedded Workbench for Arm or Visual Studio Code.
+This repository contains a project example for the IAR STM32F429II-ACA board which can be opened in the IAR Embedded Workbench for Arm or Visual Studio Code.
 
 ## Windows
 ### Option 1
