@@ -2,7 +2,8 @@
 
 This repository contains a project example for the IAR STM32F429II-ACA board which can be opened in the IAR Embedded Workbench for Arm or Visual Studio Code.
 
-## Windows
+# Windows
+## Environment Options
 ### Option 1
 - Set `IAR_TOOLCHAIN_PATH` as a Windows' system environment variable:
 1. Press the "Start Menu", search for "Edit the system environment variables".
@@ -21,5 +22,12 @@ C:\IAR>mklink /d ewarm ewarm-9.60.3
 symbolic link created for ewarm <<===>> ewarm-9.60.3
 ```
 
-## Linux
+## IAR Embedded Workbench
+### CMake configuration 
+The `EWARM/light-effects-cmake.ewp` project comes pre-configured to use CMake from its default installation path (`C:\Program Files\CMake\bin\cmake.exe`). Please reconfigure the project accordingly whenever needed.
+
+![image](https://github.com/user-attachments/assets/0bf36208-73b7-4f7e-a21e-631a58f46a24)
+
+
+# Linux
 - Automatically set to the default installation location.
